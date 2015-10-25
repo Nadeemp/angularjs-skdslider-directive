@@ -1,0 +1,202 @@
+.skdslider{
+ width:100%;
+ position: relative;
+ display: block; 
+ overflow:hidden;
+}
+
+.skdslider:after {
+    content: '';
+    padding-top:52%; 
+    display: block;
+}
+
+.skdslider ul.slides{ margin:0; padding:0; min-height:auto;   list-style-type:none;}
+.skdslider ul.slides li
+{
+	padding:0 !important;
+   display: none;
+   min-height:300px;
+}
+.skdslider ul.slides li img{
+    width:100%;	
+	height:auto;
+	border:0;
+}
+
+.skdslider ul.slide-navs {
+    bottom: 5px;
+    left: 38%;
+    position: absolute;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.skdslider ul.slide-navs li {
+    float: left;
+	background: url("image/slide-bg.png") no-repeat scroll 0 0 transparent;
+	height:12px;
+	width:12px;
+	margin-right:4px;
+	border:none;
+	cursor:pointer;
+}
+.skdslider ul.slide-navs li.current-slide {
+  background: url("image/slide-bg-active.png") no-repeat scroll 0 0 transparent;
+}
+
+.skdslider .slide-desc {
+    background: url("image/slide_desc.png") repeat scroll 0 0 transparent;
+    left:0px;
+    padding: 7px;
+    position: absolute;
+	text-align:center;
+    bottom:-1px;
+    width: 100%;
+	display:inline-block;
+}
+.skdslider .slide-desc > h2 {
+    color: #f4cc4e;
+	font-family: Arial;    
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+   
+}
+
+.skdslider .slide-desc > p {
+    color: #FFFFFF;
+    font-family: 'robotoregular';
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+.skdslider .slide-desc > p a.more {
+    color:#990000;
+	font-size:20px;
+	text-decoration:none;
+}
+.skdslider .slide-desc > p a.more:hover {
+text-decoration:underline;
+}
+
+.skdslider a.prev{
+    background: url("image/left.png") no-repeat scroll 0 0 transparent;
+	width:50px;
+	height:100px;
+	display:block;
+	cursor:pointer;
+	position:absolute;
+	top:58%;
+	left:0;
+	margin-top:-17px;
+}
+
+.skdslider a.next{
+    background: url("image/right.png") no-repeat scroll 0 0 transparent;
+	width:50px;
+	height:100px;
+	display:block;
+	cursor:pointer;
+	position:absolute;
+	top:58%;
+	right:1%;
+	margin-top:-17px;
+}
+.skdslider a.prev:hover{
+  
+}
+.skdslider a.next:hover{
+  
+}
+
+.skdslider a.play{
+    background: url("image/play.png") no-repeat scroll center center transparent;
+	width:35px;
+	height:35px;
+	display:none;
+	cursor:pointer;
+	position:absolute;
+	top:50%;
+	left:48%;
+	margin-top:-17px;
+}
+
+
+/*Some Responsive CSS */
+@media screen and (max-width:767px) {
+	.skdslider .slide-desc > h2 {
+		font-size: 14px;
+		margin-bottom: 5px;
+		margin-top: 5px;
+	}
+	.skdslider ul.slides{   }
+	.skdslider ul.slides li img{
+        width:100%;	
+	height:auto;
+      
+	border:0;
+    /*  height: 300px;
+        width: auto;*/
+}
+.skdslider a.prev{
+	display:none;
+   
+}
+
+.skdslider a.next{
+  	display:none;
+}
+	
+	.skdslider .slide-desc > p {
+		font-size: 14px;
+		line-height: 15px;
+		margin-top: 5px;
+	}
+	.skdslider .slide-desc > p a.more {
+		font-size:14px;
+	}
+	.skdslider .slide-desc {
+    background: url("image/slide_desc.png") repeat scroll 0 0 transparent;
+    left:0px;
+    padding: 7px;
+    position: absolute;
+    bottom: 0;
+ width:100%;
+ text-align:center;
+	display:inline-block;
+}
+}
+
+.skdslider ul{ margin-left:0px !important;  }
+
+.skdslider ul.slide-gallery-navs {
+    bottom: -4px;
+    left: 0px;
+    position: absolute;
+     list-style-type: none;
+    margin: 0;
+    
+    padding: 0;
+}
+
+
+.skdslider ul.slide-gallery-navs li {
+    float: left;
+	/*background: url("image/slide-bg.png") no-repeat scroll 0 0 transparent;*/
+        border: 1px solid #fff ;
+	height:auto;
+	margin-right:0px;
+        width: 33.333%;
+        height: 80px;        
+	border:none;
+	cursor:pointer;
+}
+.skdslider ul.slide-gallery-navs li img{   border: 1px solid #fff ; height:80px; opacity:0.7;  width:100%;   }
+.skdslider ul.slide-gallery-navs li.current-slide {opacity:1; 
+  /*background: url("image/slide-bg-active.png") no-repeat scroll 0 0 transparent;*/
+   
+}
+.skdslider ul.slide-gallery-navs li.current-slide img{ border: 1px solid red ; opacity:1; }

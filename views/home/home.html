@@ -1,0 +1,149 @@
+ 
+
+<script type="text/javascript">
+	
+//$(document).ready( function() {
+//    $('.subMenu').smint({
+//    	'scrollSpeed' :1000
+//    });
+//});
+</script>
+      <div class="content-area" > 
+          
+           <div style="width:100%; float:left; height:auto" >
+     
+      <div class="home-banner" >
+
+          <div  style="padding:0; width:100%; float:left; background-color:#fffcf5 " ng-init="images=null">
+          
+             <!--photo gallery slider-->
+             
+             <div class="container slider">
+
+        <!-- enumerate all photos -->
+       <!-- <ul>
+            <li  ng-repeat="img in banner_images">
+        <img width="683" height="389"  class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="http://www.ofa.om/sites/default/files/{{img.banner_image}}" />
+            <div class="slide-desc" ng-show="isActive($index)">
+		<h2  id="home-section1" data-speed="5">{{img.banner_title}}</h2>
+		
+             </div>
+            </li>
+        </ul>-->    
+        <!-- prev / next controls -->
+       <!-- <a class="arrow prev" href="#" ng-click="showPrev()"></a>
+        <a class="arrow next" href="#" ng-click="showNext()"></a>-->
+
+        <!-- extra navigation controls -->
+        <!--<ul class="nav">
+            <li ng-repeat="img in banner_images" ng-class="{'active':isActive($index)}">
+                <img src="{{appconfig.img_baseurl+img.banner_image}}" alt="kkd" title="{{img.banner_title}}" ng-click="showPhoto($index);" />
+            </li>
+        </ul>-->
+
+     </div>
+             
+             <!--end of photogallery slider-->
+              
+              <!-- <slider images="images" />-->
+              <!--<div><img ng-show="loaded" bg-image class="fullBg {{currentAnimation}}" ng-repeat="slide in slides"
+         ng-if="isCurrentSlideIndex($index)" 
+         ng-src="http://www.opl.om/sites/default/files/{{slide.banner_image}}"></div>-->
+            <ul id="demo1" slideit="{{banner_images}}">
+           
+    <!--<ul id="demo1" >-->
+      
+    <li  ng-repeat="img in banner_images" ng-click="showPhoto($index);" ng-swipe-right="showPrev()" ng-swipe-left="showNext()">
+ <img src="images/{{img.banner_image}}" width="683" height="389">
+
+ <div class="slide-desc">
+		<h2  id="home-section1" data-speed="5">{{ img.banner_title }}</h2>
+		
+  </div>
+</li>
+
+
+</ul>
+ 
+ <script src="src/skdslider.min.js"></script>
+<link href="src/skdslider.css" rel="stylesheet">
+
+	</div>
+
+      
+      </div>
+      
+      </div> 
+       
+      <div ng-show="$root.language.language=='en'" class="inner-header">News</div>
+       <div ng-show="$root.language.language=='ar'" class="inner-header"> أخبار </div>
+       <!-- set-class-when-tabs-top="fix-to-tabs"-->
+       <div id="horizontalTab" jquery-tabs >
+       <script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
+        <section class="subMenu" >
+        <div  set-class-when-tabs-top="fix-to-tabs-home" ng-style="tab_padding">
+            <span><a href=".tab-1" id="sTop" ng-show="tab_show"><label ng-show="$root.language.language=='en'">{{$root.my_club}}</label><label ng-show="$root.language.language=='ar'">{{$root.my_club_ar}}</label></a></span>
+            <span><a href=".tab-2" ng-show="tab_show">OFA</a></span>
+           </div>
+        </section>
+
+        <div class="tab-1">
+           <div class="ofa-list news-list" infinite-scroll-disabled='false' infinite-scroll='loadMore()' infinite-scroll-distance='0'>
+       <ul>
+      <li ng-repeat=" news_item in news_items " ng-attr-style="{{ getBackground(news_item.news_image) }}"  ><a href="#/news-details/{{news_item.news_nid}}" >
+   <div class="list-text">
+   <span class="list-date">{{news_item.news_created}}</span>
+   <span class="list-header">{{news_item.news_title}}</span></div>
+       
+      </a> </li>
+         
+         
+         
+      
+       
+       </ul>
+       
+       </div>
+        </div>
+        <div class="tab-2">
+          
+            <div class="ofa-list news-list" infinite-scroll-disabled='false' infinite-scroll='loadMoreofa()' infinite-scroll-distance='0'>
+       <ul>
+       <li ng-repeat=" news_item in news_itemsofa " ng-attr-style="{{ getBackgroundofa(news_item.news_image) }}">
+  <div class="news-bg">
+       <a href="#/news-ofa-details/{{news_item.news_nid}}">
+       <div class="list-text">
+   <span class="list-date">{{news_item.date}}</span>
+   <span class="list-header">{{news_item.title}}</span></div>
+         
+  
+       
+      </a> </div></li>
+         
+         
+         
+         
+      
+       
+       </ul>
+       
+       </div>
+        </div>
+        
+
+    </div>
+      
+      
+        
+        </div>
+<script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
+<!--<div class="social-click">
+       <nav mfb-menu position="br" effect="zoomin" label="hover here"
+     active-icon="ion-edit" resting-icon="ion-plus-round"
+     toggling-method="click">
+  <button mfb-button icon="paper-airplane" label="menu item"></button>
+  <button mfb-button icon="ion-social-twitter" label="menu item"></button>
+  <button mfb-button icon="ion-social-facebook" label="menu item"></button>
+  <button mfb-button icon="ion-social-instagram" label="menu item1"></button>
+</nav>
+     </div>-->
